@@ -1,4 +1,5 @@
 from bank_account import manage_bank_account
+from file_manager import create_folder
 
 
 def main():
@@ -22,6 +23,9 @@ def main():
     user_choice = input("Your choice: ")
     if user_choice == "10":
         manage_bank_account()
+    elif user_choice == "1":
+        f_name = input("Enter the folder name: ")
+        create_folder(f_name)
 
 
 if __name__ == '__main__':
