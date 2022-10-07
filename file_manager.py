@@ -4,6 +4,11 @@ import platform
 
 
 def choice(question):
+    """
+    Provides some logic to continue or not
+    :param question: str
+    :return: True or False
+    """
     result = input(question + "? (y/n): ")
     if result.lower() == "n":
         return False
@@ -66,6 +71,10 @@ def delete_folder():
 
 
 def create_file():
+    """
+    Creates a new file in the working directory
+    :return: None
+    """
     keep_asking = True
     create_another = True
     while create_another:
@@ -83,6 +92,10 @@ def create_file():
 
 
 def copy_file():
+    """
+    Copies existing folder or file
+    :return: None
+    """
     keep_asking = True
     copy_another = True
     while copy_another:
@@ -117,6 +130,10 @@ def show_dir_content():
 
 
 def show_dir_only():
+    """
+    Displays only folders in the working directory
+    :return: None
+    """
     dirs = []
     for item in os.listdir(os.getcwd()):
         if os.path.isdir(item):
@@ -125,6 +142,10 @@ def show_dir_only():
 
 
 def show_file_only():
+    """
+    Displays only files in the working directory
+    :return: None
+    """
     files = []
     for item in os.listdir(os.getcwd()):
         if os.path.isfile(item):
@@ -133,6 +154,10 @@ def show_file_only():
 
 
 def show_os_info():
+    """
+    Displays OS info
+    :return: None
+    """
     print(platform.platform())
     print("System name: ", platform.system())
     print("Release: ", platform.release())
@@ -140,6 +165,10 @@ def show_os_info():
 
 
 def change_cwd():
+    """
+    Changing the current working directory
+    :return: None
+    """
     print("""
     Пример ввода пути: test_folder_1,
                        test_folder_1/test_folder_2,
