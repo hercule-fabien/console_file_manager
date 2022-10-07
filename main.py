@@ -1,5 +1,5 @@
 from bank_account import manage_bank_account
-from file_manager import create_folder, delete_folder, create_file, copy_file
+from file_manager import *
 
 
 def main():
@@ -34,13 +34,30 @@ def main():
                 delete_folder()
             elif user_choice == 4:
                 copy_file()
+            elif user_choice == 5:
+                for item in show_dir_content():
+                    print("*", item)
+            elif user_choice == 6:
+                for item in show_dir_only():
+                    print("*", item)
+            elif user_choice == 7:
+                for item in show_file_only():
+                    print("*", item)
+            elif user_choice == 8:
+                pass
+            elif user_choice == 9:
+                pass
+            elif user_choice == 10:
+                pass
             elif user_choice == 11:
                 manage_bank_account()
+            elif user_choice == 12:
+                pass
             elif user_choice == 13:
                 print("Good bye!")
                 break
         else:
-            print("Please enter a valid option between 1-12")
+            print("Please enter a valid option between 1-13")
 
 
 if __name__ == '__main__':
