@@ -1,6 +1,7 @@
 import os
 import shutil
 import sys
+import platform
 
 
 def choice(question):
@@ -130,3 +131,10 @@ def show_file_only():
         if os.path.isfile(item):
             files.append(item)
     return files
+
+
+def show_os_info():
+    print(platform.platform())
+    print("System name: ", platform.system())
+    print("Release: ", platform.release())
+    print("Version: ", platform.version())
