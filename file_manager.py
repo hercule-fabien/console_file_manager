@@ -1,6 +1,5 @@
 import os
 import shutil
-import sys
 import platform
 
 
@@ -138,3 +137,21 @@ def show_os_info():
     print("System name: ", platform.system())
     print("Release: ", platform.release())
     print("Version: ", platform.version())
+
+
+def change_cwd():
+    print("""
+    Пример ввода пути: test_folder_1,
+                       test_folder_1/test_folder_2,
+                       и т.д.
+    Чтобы подняться на уровень выше: ../,
+                                     ../..,
+                                     и т.д.
+    """)
+    new_path = input("Введите путь к папке: ")
+    try:
+        os.chdir(new_path)
+    except:
+        print("Неверно указан путь")
+    else:
+        print("Новая рабочая директория: ", os.getcwd())
