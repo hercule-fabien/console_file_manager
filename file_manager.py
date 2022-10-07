@@ -19,11 +19,11 @@ def create_folder(folder_name):
     """
     while True:
         if os.path.exists(folder_name):
-            print("The folder with this name already exists.")
-            folder_name = input("Please enter the other name: ")
+            print("Папка с таким именем уже существует.")
+            folder_name = input("Выберите другое имя: ")
         if not os.path.exists(folder_name):
             os.mkdir(folder_name)
-            print("Folder was created")
+            print("Папка создана успешно")
             break
 
 
@@ -34,23 +34,23 @@ def delete_folder():
     """
     keep_asking = True
     while keep_asking:
-        f_name = input("Enter the folder/file name to delete: ")
+        f_name = input("Введите имя папки/файла для удаления: ")
         if os.path.isdir(f_name):
             if os.path.exists(f_name):
                 os.rmdir(f_name)
-                print("Folder deleted")
+                print("Папка удалена")
             else:
-                print("This folder doesn't exist")
+                print("Такой папки не существует")
         elif os.path.isfile(f_name):
             if os.path.exists(f_name):
                 os.remove(f_name)
-                print("The file deleted")
+                print("Файл удален")
             else:
-                print("This file doesn't exist")
+                print("Такой файл не существует")
         else:
-            print("This doesn't exist, try another")
+            print("Не понял вас, попробуйте другое имя")
 
-        choice = input("Delete another? (y/n): ")
+        choice = input("Удалить еще? (y/n): ")
         if choice.lower() == "n":
             keep_asking = False
 
@@ -71,16 +71,16 @@ def create_file():
     create_another = True
     while create_another:
         while keep_asking:
-            f_name = input("Enter the file name to create: ")
+            f_name = input("Введите имя создаваемого файла: ")
             if not os.path.exists(f_name):
                 open(f_name, 'a').close()
-                print("The file created")
+                print("Файл создан успешно")
                 break
             else:
-                print("The file already exists")
+                print("Такой файл существует")
 
-            keep_asking = choice("Try another name")
-        create_another = choice("Create another file")
+            keep_asking = choice("Попробовать другое имя")
+        create_another = choice("Создать еще файл")
 
 
 def copy_file():
@@ -88,25 +88,25 @@ def copy_file():
     copy_another = True
     while copy_another:
         while keep_asking:
-            f_name = input("Enter the folder/file name to copy: ")
-            copy_name = input("Enter the name for copy: ")
+            f_name = input("Какую папку или файл вы хотите скопировать?_ ")
+            copy_name = input("Как назовем копию?_ ")
             if os.path.exists(f_name):
                 if not os.path.exists(copy_name):
                     if os.path.isfile(f_name):
                         shutil.copy(f_name, copy_name)
-                        print("The file copied")
+                        print("Файл скопирован")
                         break
                     elif os.path.isdir(f_name):
                         shutil.copytree(f_name, copy_name)
-                        print("Success!")
+                        print("Успех! Папка скопирована!")
                         break
                 else:
-                    print("The name already exists")
+                    print("Такое имя существует")
             else:
-                print("The file with this name doesn't exist")
-            keep_asking = choice("Try another name")
+                print("Папка или файл с таким именем уже существует")
+            keep_asking = choice("Попробовать другое имя")
 
-        copy_another = choice("Copy another file")
+        copy_another = choice("Скопировать еще")
 
 
 def show_dir_content():
