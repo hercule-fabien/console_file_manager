@@ -44,7 +44,7 @@ def main():
                 for item in show_file_only():
                     print("*", item)
             elif user_choice == 8:
-                pass
+                show_os_info()
             elif user_choice == 9:
                 pass
             elif user_choice == 10:
