@@ -106,3 +106,27 @@ def copy_file():
             keep_asking = choice("Try another name")
 
         copy_another = choice("Copy another file")
+
+
+def show_dir_content():
+    """
+    Returns list of working directory content
+    :return: list
+    """
+    return os.listdir(os.getcwd())
+
+
+def show_dir_only():
+    dirs = []
+    for item in os.listdir(os.getcwd()):
+        if os.path.isdir(item):
+            dirs.append(item)
+    return dirs
+
+
+def show_file_only():
+    files = []
+    for item in os.listdir(os.getcwd()):
+        if os.path.isfile(item):
+            files.append(item)
+    return files
