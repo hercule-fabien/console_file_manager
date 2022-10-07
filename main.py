@@ -23,41 +23,45 @@ def main():
     """)
 
     while True:
-        user_choice = int(input("Choose menu item to continue: "))
-        if user_choice in range(1, 14):
-            if user_choice == 1:
-                f_name = input("Enter the folder name: ")
-                create_folder(f_name)
-            elif user_choice == 2:
-                create_file()
-            elif user_choice == 3:
-                delete_folder()
-            elif user_choice == 4:
-                copy_file()
-            elif user_choice == 5:
-                for item in show_dir_content():
-                    print("*", item)
-            elif user_choice == 6:
-                for item in show_dir_only():
-                    print("*", item)
-            elif user_choice == 7:
-                for item in show_file_only():
-                    print("*", item)
-            elif user_choice == 8:
-                show_os_info()
-            elif user_choice == 9:
-                pass
-            elif user_choice == 10:
-                pass
-            elif user_choice == 11:
-                manage_bank_account()
-            elif user_choice == 12:
-                pass
-            elif user_choice == 13:
-                print("Good bye!")
-                break
-        else:
-            print("Please enter a valid option between 1-13")
+        try:
+            user_choice = int(input("Choose menu item to continue: "))
+            if user_choice in range(1, 14):
+                if user_choice == 1:
+                    f_name = input("Enter the folder name: ")
+                    create_folder(f_name)
+                elif user_choice == 2:
+                    create_file()
+                elif user_choice == 3:
+                    delete_folder()
+                elif user_choice == 4:
+                    copy_file()
+                elif user_choice == 5:
+                    for item in show_dir_content():
+                        print("*", item)
+                elif user_choice == 6:
+                    for item in show_dir_only():
+                        print("*", item)
+                elif user_choice == 7:
+                    for item in show_file_only():
+                        print("*", item)
+                elif user_choice == 8:
+                    show_os_info()
+                elif user_choice == 9:
+                    print("Created by Vasily Glazkov")
+                elif user_choice == 10:
+                    pass
+                elif user_choice == 11:
+                    manage_bank_account()
+                elif user_choice == 12:
+                    pass
+                elif user_choice == 13:
+                    print("Good bye!")
+                    break
+            else:
+                print("Please enter a valid option between 1-13")
+        except ValueError:
+            print("That's not an int!")
+            print("Enter a number between 1-13")
 
 
 if __name__ == '__main__':
