@@ -6,7 +6,7 @@ from victory import victory_game
 def main():
     print("Приветствую в программе File Manager")
     print("*" * 27)
-    print("""
+    menu = """
         1. Создать папку.
         2. Создать файл.
         3. Удалить (файл/папку).
@@ -18,16 +18,18 @@ def main():
         9. Создатель программы.
         10. Играть в викторину.
         11. Мой банковский счет.
-        12. Смена рабочей директории.
-        13. Выход.
-    """)
+        12. Узнать текущую директорию.
+        13. Смена рабочей директории.
+        14. Выход.
+    """
 
     while True:
+        print(menu)
         try:
-            user_choice = int(input("Выберите действие из меню - введите число (1-13): "))
+            user_choice = int(input("Выберите действие из меню - введите число (1-14): "))
         except ValueError:
             print("Это не целое число!")
-            print("Пожалуйста введите только целое число между 1-13")
+            print("Пожалуйста введите только целое число между 1-14")
         else:
             if user_choice in range(1, 14):
                 if user_choice == 1:
@@ -50,6 +52,7 @@ def main():
                         print("*", item)
                 elif user_choice == 8:
                     show_os_info()
+                    input("Нажмите клавишу 'ввод' чтобы продолжить")
                 elif user_choice == 9:
                     print("Created by Vasily Glazkov")
                 elif user_choice == 10:
@@ -57,12 +60,15 @@ def main():
                 elif user_choice == 11:
                     manage_bank_account()
                 elif user_choice == 12:
-                    pass
+                    print("Вы находитесь здесь: ", os.getcwd())
+                    input("Нажмите клавишу 'ввод' чтобы продолжить")
                 elif user_choice == 13:
+                    change_cwd()
+                elif user_choice == 14:
                     print("Работа программы завершена! Хорошего дня!")
                     break
             else:
-                print("Пожалуйста введите только число в диапазоне от 1 до 13")
+                print("Пожалуйста введите только число в диапазоне от 1 до 14")
 
 
 if __name__ == '__main__':
