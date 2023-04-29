@@ -16,6 +16,7 @@ famous_people = {
 
 """Getting random list of 5 names from the dictionary famous_people
 By default random.sample gets keys from the dictionary, so no need to use famous_people.keys()"""
+# Тестовое рабочее задание
 
 
 def victory_game():
@@ -44,7 +45,8 @@ def victory_game():
                     print("Вы ошиблись")
                     print(f"Верный ответ: {days[day]} {months[month]} {year}")
 
-            display_statistics(wrong, correct)  # Функции вынесены в файл utils.py
+            # Функции вынесены в файл utils.py
+            display_statistics(wrong, correct)
             keep_playing = play_again()
 
             if keep_playing:
